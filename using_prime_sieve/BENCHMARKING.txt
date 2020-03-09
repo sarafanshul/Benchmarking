@@ -1,0 +1,11 @@
+// add time = "*" // in cargo.toml
+
+// main code
+extern crate time;
+use std::time::{Instant};
+
+fn mani(){
+    let now = Instant::now();
+    let np = prime_sieve(n);
+    println!("Time elapsed = {:?} , Primes = {} ",now.elapsed() , np);
+}

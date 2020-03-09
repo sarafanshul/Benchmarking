@@ -1,0 +1,58 @@
+Why writing benchmarks is hard
+
+	There are many pitfalls when writing benchmarks. 
+	A single mistake can make your benchmark results 
+	meaningless. 
+
+	Here is a list of common mistakes:
+
+	-> Compile with optimizations: rustc -O3 or cargo build --release. 
+		When you are executing your benchmarks with cargo bench, 
+		Cargo will automatically enabled optimizations. 
+		This step is important as there are often large 
+		performance difference between optimized and 
+		unoptimized Rust code.
+
+	-> Repeat the workload: only running your workload once is 
+		almost always useless. There are many things that can influence 
+		your timing: overall system load, the operating system doing 
+		stuff, CPU throttling, file system caches, and so on. So repeat 
+		your workload as often as possible. For example, Criterion runs 
+		every benchmarks for at least 5 seconds (even if the workload 
+		only takes a few nanoseconds). All measured times can then be 
+		analyzed, with mean and standard deviation being the standard tools.
+
+	-> Make sure your benchmark isn't completely removed: benchmarks are very 
+		artificial by nature. Usually, the result of your workload is not inspected 
+		as you only want to measure the duration. However, this means that a good 
+		optimizer could remove your whole benchmark because it does not have 
+		side-effects (well, apart from the passage of time). So to trick the 
+		optimizer you have to somehow use your result value so that your 
+		workload cannot be removed. An easy way is to print the result. 
+		A better solution is something like black_box. This function 
+		basically hides a value from LLVM in that LLVM cannot know 
+		what will happen with the value. Nothing happens, but LLVM 
+		doesn't know. That is the point.
+
+	-> Good benchmarking frameworks use a block box 
+		in several situations. For example, the closure given to the 
+		iter method (for both, the built-in and Criterion Bencher) can 
+		return a value. That value is automatically passed into a black_box.
+
+	-> Beware of constant values: similarly to the point above, 
+		if you specify constant values in a benchmark, the optimizer 
+		might generate code specifically for that value. In extreme 
+		cases, your whole workload could be constant-folded into a 
+		single constant, meaning that your benchmark is useless. Pass 
+		all constant values through black_box to avoid LLVM optimizing 
+		too aggressively.
+	
+	-> Beware of measurement overhead: measuring a duration takes time 
+		itself. That is usually only tens of nanoseconds, but can influence 
+		your measured times. So for all workloads that are faster than a few 
+		tens of nanoseconds, you should not measure each execution time individually. 
+		You could execute your workload 100 times and measure how long 
+		all 100 executions took. Dividing that by 100 gives you the average 
+		single time. The benchmarking frameworks mentioned above also use this 
+		trick. Criterion also has a few methods for measuring very short 
+		workloads that have side effects (like mutating something).
