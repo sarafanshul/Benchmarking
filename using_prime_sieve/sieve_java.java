@@ -3,7 +3,7 @@ import java.lang.*;
 
 class SieveOfEratosthenes 
 {
-	static int n = (int)1e9 + 2;
+	static int n = (int)1e7 + 2;
 	static boolean prime[] = new boolean[n+1];
 
 	static void sieveOfEratosthenes() { 
@@ -19,16 +19,21 @@ class SieveOfEratosthenes
 	}
 	public static void main(String args[]) 
 	{	
-		Arrays.fill(prime, true);
-		long startTime = System.nanoTime();
-		sieveOfEratosthenes();
-		long endTime   = System.nanoTime();
-		long totalTime = endTime - startTime;
-		System.out.println(totalTime); // 17 sec for 1e9
-		double no_of_primes = 0;
-		for(long i = 0; i <n ; ++i)
-			if(prime[(int)i])
-				no_of_primes += 1;
-		System.out.println((int)no_of_primes);
+		long _time = 0;
+		for (int i = 0 ; i<4 ; ++i){
+			Arrays.fill(prime, true);
+			long startTime = System.nanoTime();
+			sieveOfEratosthenes();
+			long endTime   = System.nanoTime();
+			_time += endTime - startTime;
+			
+			Arrays.fill(prime, true);
+		}
+		System.out.println(_time);
+		// double no_of_primes = 0;
+		// for(long i = 0; i <n ; ++i)
+		// 	if(prime[(int)i])
+		// 		no_of_primes += 1;
+		// System.out.println((int)no_of_primes);
 	} 
 }
