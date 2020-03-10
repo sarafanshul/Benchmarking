@@ -4,8 +4,7 @@
 using namespace std; 
 using namespace std::chrono; 
   
-void SieveOfEratosthenes(int n ,bool prime[]) 
-{
+void SieveOfEratosthenes(int n ,bool prime[]) {
 	for (int p=2; p*p<=n; p++) 
 	{ 
 		if (prime[p] == true) 
@@ -16,8 +15,7 @@ void SieveOfEratosthenes(int n ,bool prime[])
 	} 
 }
 
-int main() 
-{ 
+int main() { 
 	int n = (int)1e7 + 2;
 	bool* prime = new bool[n+1];
 	memset(prime, true, sizeof(prime));
