@@ -42,6 +42,7 @@ def SieveOfEratosthenes(n):  # 0.49483466148376465
 			for i in range(p * p, n+1, p): 
 				PRIMES[i] = False
 		p += 1
+		
 prime = [] 
   
 # This method finds all primes  

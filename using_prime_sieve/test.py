@@ -1,11 +1,16 @@
-import SieveEuth , time , timeit
+# import SieveEuth , time , timeit # for rs ext
+import sievecpy , time , timeit # for cpy ext
+PRIMES = [True for i in range(int(1e7+2)+1)]
 
 def testfunc():
-	N = str(int(1e7+2))
-	SieveEuth.sieve(N)
+	global PRIMES
+	N = int(1e7+2)
+	sievecpy.SieveOfEratosthenes(N , PRIMES)
+
 
 def main():
-	print(timeit.timeit("testfunc()",  "from __main__ import testfunc" , number = 10)) # 2.9327098510000003
+	print(timeit.timeit("testfunc()",  "from __main__ import testfunc" , number = 1)) # 2.9327098510000003
+	# testfunc()
 
 if __name__ == '__main__':
 	main()
