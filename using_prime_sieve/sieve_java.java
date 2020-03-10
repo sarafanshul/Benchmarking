@@ -30,10 +30,5 @@ class SieveOfEratosthenes
 			Arrays.fill(prime, true);
 		}
 		System.out.println(_time);
-		// double no_of_primes = 0;
-		// for(long i = 0; i <n ; ++i)
-		// 	if(prime[(int)i])
-		// 		no_of_primes += 1;
-		// System.out.println((int)no_of_primes);
 	} 
 }
