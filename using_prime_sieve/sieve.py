@@ -35,7 +35,7 @@ def sieve(N): # 0.9648633003234863
 		for j in range(i+i , N , i):
 			PRIMES[j] = False
 
-def SieveOfEratosthenes(n):  # 0.49483466148376465
+def SieveOfEratosthenes(n ,PRIMES):  # 0.49483466148376465
 	p = 2
 	while (p * p <= n): 
 		if PRIMES[p]:
