@@ -2,8 +2,11 @@
 
 /* C++ program to solve N Queen Problem using Branch 
    and Bound */
+#pragma GCC optimize("O3")
+#pragma comment(linker, "/stack:200000000")
+#pragma GCC optimize("unroll-loops")
 #include<bits/stdc++.h>
-#define N 10
+#define N 13
 using namespace std;
 
 int cnt = 0;
@@ -73,7 +76,7 @@ void nQueens(){
 }
 
 int main() {
-	int n = 10;
+	// int n = 10;
 	nQueens();
 	return 0; 
 } 

@@ -1,4 +1,6 @@
-
+#pragma GCC optimize("O3")
+#pragma comment(linker, "/stack:200000000")
+#pragma GCC optimize("unroll-loops")
 #include <iostream>
 #include <string>
 #include <vector>
@@ -62,7 +64,7 @@ private:
 
 //--------------------------------------------------------------------------------------------------
 int main(){
-    uint n = 10; nQueens_Heuristic nQH;
+    uint n = 13; nQueens_Heuristic nQH;
     nQH.solve(n);
     return 0;
 }

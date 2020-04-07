@@ -1,0 +1,24 @@
+Using Measure-Command {Compiler ScriptName}
+
+
+
+PS E:\Py\Basics> Measure-Command {Python Sum31.py}
+
+
+Days              : 0
+Hours             : 0
+Minutes           : 0
+Seconds           : 17
+Milliseconds      : 216
+Ticks             : 172166935
+TotalDays         : 0.00019926728587963
+TotalHours        : 0.00478241486111111
+TotalMinutes      : 0.286944891666667
+TotalSeconds      : 17.2166935
+TotalMilliseconds : 17216.6935
+
+
+
+
+
+

@@ -129,8 +129,7 @@ struct queens{
 };
 
 
-int main()
-{
-  std::cout << queens( 10 ) << "\n";
+int main(){
+  std::cout << queens( 13 ) << "\n";
 }
  

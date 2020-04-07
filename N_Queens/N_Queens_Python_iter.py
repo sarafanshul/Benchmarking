@@ -20,7 +20,7 @@ def nQueens(n):
 		print(len(queensproblem(n,n)))
 
 def main():
-	nQueens(10)
+	nQueens(13)
 
 if __name__ == '__main__':
 	main()

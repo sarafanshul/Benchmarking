@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const int N = 10;
+const int N = 13;
 int position[31];
 int cnt = 0;
 
@@ -48,7 +48,7 @@ void solve(int k)
 
 int main()
 {
-	int n = 10;
+	int n = 13;
 	solve(0);
 	cout << cnt <<"\n";
 

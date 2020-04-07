@@ -45,15 +45,15 @@ int nQueens(int n) {
  
  
 int main() {
-	double time_spent = 0.0;
-    clock_t begin = clock();
+	// double time_spent = 0.0;
+ //    clock_t begin = clock();
 
-    int n = 12;
+    int n = 13;
 	printf("%d\n%d\n",n ,nQueens(n));
 
-	clock_t end = clock();
-	time_spent += (double)(end - begin);
-    printf("Time elpased is %f s", (time_spent*10)/ CLOCKS_PER_SEC);
+	// clock_t end = clock();
+	// time_spent += (double)(end - begin);
+ //    printf("Time elpased is %f s", (time_spent*10)/ CLOCKS_PER_SEC);
 	return 0;
 }
  

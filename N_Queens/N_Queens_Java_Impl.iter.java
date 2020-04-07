@@ -1,6 +1,6 @@
 class NQueens {
   
-  private static int N = 10;
+  private static int N = 13;
   private static int[] b = new int[N];
   private static int s = 0;
  

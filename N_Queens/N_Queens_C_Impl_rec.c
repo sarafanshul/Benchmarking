@@ -26,7 +26,7 @@ void nQueens(int n){
  
 
 int main(){
-	int n = 10;
+	int n = 13;
 	nQueens(n);
 	return 0;
 }
