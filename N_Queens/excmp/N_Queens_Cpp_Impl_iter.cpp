@@ -1,20 +1,3 @@
-// A straight-forward brute-force C++ version with formatted output,
-// eschewing obfuscation and C-isms, producing ALL solutions, which
-// works on any OS with a text terminal.
-//
-// Two basic optimizations are applied:
-//
-//   It uses backtracking to only construct potentially valid solutions.
-//
-//   It only computes half the solutions by brute -- once we get the
-//   queen halfway across the top row, any remaining solutions must be
-//   reflections of the ones already computed.
-//
-// This is a bare-bones example, without any progress feedback or output
-// formatting controls, which a more complete program might provide.
-//
-// Beware that computing anything larger than N=14 might take a while.
-// (Time gets exponentially worse the higher the number.)
 
 #pragma GCC optimize("O3")
 #pragma comment(linker, "/stack:200000000")
@@ -29,6 +12,9 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+
+#include <chrono> 
+using namespace std::chrono; 
 
 struct queens{
 
@@ -130,6 +116,11 @@ struct queens{
 
 
 int main(){
-  std::cout << queens( 13 ) << "\n";
+  auto start = high_resolution_clock::now();
+  std::cout << queens(15) << "\n";
+  auto stop = high_resolution_clock::now();
+  auto duration = duration_cast<microseconds>(stop - start);
+  std::cout << duration.count() << " microseconds" << "\n";
+  
 }
  

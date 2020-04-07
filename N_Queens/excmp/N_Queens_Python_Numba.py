@@ -34,8 +34,7 @@ def allQueensNumba(n,i,col,dg1,dg2):
             
     return nsol
 if __name__ == "__main__":
-
     n = 13
     a = time()
     ns = allQueensNmb(n)
-    print('Numba  :',ns,time()-a)
+    print('Numba  :',ns,time()-a)   

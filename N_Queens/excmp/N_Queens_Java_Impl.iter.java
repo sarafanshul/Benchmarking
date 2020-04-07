@@ -22,6 +22,7 @@ public static void main(String[] args) {
     int cnt = 0;
     int y = 0;
     b[0] = -1;
+    double t1 = System.nanoTime();
     while (y >= 0) {
       do {
         b[y]++;
@@ -36,6 +37,9 @@ public static void main(String[] args) {
         y--;
       }
     }
-    System.out.println(cnt);
+    double t2 = System.nanoTime();
+    double dt = (t2 - t1) * 1e-9;
+    // System.out.println(cnt);
+    System.out.println(String.format("%d  %f %d", N,dt ,cnt));
   }
 }
