@@ -1,3 +1,4 @@
+
 # Benchmark
 
 This is a Multi-Lingual repository for benchmarking different languages in different levels and compiler optimizations 
@@ -15,13 +16,16 @@ This is a Multi-Lingual repository for benchmarking different languages in diffe
 As we can see this mainly focuses around Python because we can highly decrease runtime of our routines
 
 ## Current Winners
+**Overall Winner**
+:medal_military::trophy: Python-C Ectension
+
 **Sieve of Eratosthenes** 
-   1. Python-C Extension
-   2. Java
+   :1st_place_medal: Python-C Extension
+  :2nd_place_medal:Java
 
 **N-Queens**
-   1. Python-Rust Extension
-   2. Python-C Extension
+   :1st_place_medal:Python-Rust Extension
+   :2nd_place_medal: Python-C Extension
 
 
 ![N-Queens](https://github.com/sarafanshul/Benchmarking/blob/master/N_Queens/final.png)
@@ -52,4 +56,4 @@ Please make sure to update tests as appropriate.
 ## Author
 [Anshul Saraf](https://github.com/sarafanshul)
 ## License
-[Gnu](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[GNU](https://www.gnu.org/licenses/gpl-3.0.en.html)
