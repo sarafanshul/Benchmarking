@@ -40,12 +40,20 @@ void solve(int k ,int n){
 }
 
 int main(){
-	auto start = high_resolution_clock::now();
-	int n = 10;
-  	solve(0 ,n);
-	cout << cnt <<"\n";
-  	auto stop = high_resolution_clock::now();
-  	auto duration = duration_cast<microseconds>(stop - start);
-  	cout << duration.count() << " microseconds" << "\n";
+	int n = 13;
+	cout << "N -> 13,"<<"\n";
+	long mean = 0; 
+	for (int a = 0; a <30 ; ++a){
+		auto start = high_resolution_clock::now();
+	  	solve(0 ,n);
+		// cout << cnt <<"\n";
+
+	  	auto stop = high_resolution_clock::now();
+	  	auto duration = duration_cast<microseconds>(stop - start);
+	  	cout << duration.count() << ",\n";
+	  	mean += duration.count();
+	  	cnt = 0;
+  	}
+  	cout << "m -> "<<mean/30<<"\n";
 	return 0;
 }

@@ -4,14 +4,17 @@ class Queens {
 	public static void main(String[] args){
 
 		int n = 13;
-		int nsol = 0;
-		double t1 = System.nanoTime();
-		Board b = new Board(n);
-		nsol = b.allQueensRec();
+		System.out.println("Java");
+		for (int i = 0; i<30; i++){
+			int nsol = 0;
+			double t1 = System.nanoTime();
+			Board b = new Board(n);
+			nsol = b.allQueensRec();
 
-		double t2 = System.nanoTime();
-		double dt = (t2 - t1) * 1e-9;
-		System.out.println(String.format("%d	%f", n,dt));
+			double t2 = System.nanoTime();
+			double dt = (t2 - t1) * 1e-9;
+			System.out.println(String.format("%f",dt));
+		}
 
 	}
 	

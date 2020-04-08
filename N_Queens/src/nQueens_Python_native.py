@@ -35,6 +35,12 @@ def allQueensNumba(n,i,col,dg1,dg2):
     return nsol
 if __name__ == "__main__":
     n = 13
-    a = time()
-    ns = allQueensNmb(n)
-    print('Numba  :',ns,time()-a)   
+    mean = 0
+    print("N -> 13,")
+    for i in range(30):
+        a = time()
+        ns = allQueensNmb(n)
+        t = time()-a
+        print('     ',t,",")
+        mean += t
+    print("m ->",mean/30)
