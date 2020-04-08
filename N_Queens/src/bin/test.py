@@ -1,5 +1,5 @@
 import timeit ,json
-from bin.utils import (c_py_impl ,
+from utils import (c_py_impl ,
 						rust_py_impl ,
 						cpp_py_impl)
 

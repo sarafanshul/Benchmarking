@@ -1,4 +1,4 @@
-from rust.Release import nQueens as nQueens_r
+from rust.release import nQueens as nQueens_r
 from c.build import nQueens as nQueens_c
 from cpp.build import nQueens as nQueens_cpp
 
@@ -18,4 +18,4 @@ def main():
 	print(nQueens_c.__doc__)
 
 if __name__ == '__main__':
-	main()
+	main()	
