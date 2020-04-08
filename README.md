@@ -1,3 +1,4 @@
+
 # Benchmark
 
 This is a Multi-Lingual repository for benchmarking different languages in different levels and compiler optimizations 
@@ -16,6 +17,7 @@ As we can see this mainly focuses around Python because we can highly decrease r
 
 ## Current Winners
 **Overall Winner**
+
 :medal_military::trophy: Python-C Ectension
 
 **Sieve of Eratosthenes** 
@@ -24,11 +26,13 @@ As we can see this mainly focuses around Python because we can highly decrease r
 
    :2nd_place_medal:Java
 
+
 **N-Queens**
 
    :1st_place_medal:Python-Rust Extension
 
    :2nd_place_medal: Python-C Extension
+
 
 
 
